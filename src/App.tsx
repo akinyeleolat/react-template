@@ -3,6 +3,7 @@ import './App.css';
 import { CanvasLayout } from './components/layouts/CanvasLayout';
 import { CanvasComponent } from './components/CanvasComponent';
 import { CanvasComponentCircle } from './components/CanvasComponentCircle';
+import { Canvas } from './components/Image';
 
 const App: React.FC = () =>  {
   return (
@@ -12,6 +13,9 @@ const App: React.FC = () =>  {
     </CanvasLayout>
     <CanvasLayout>
     <CanvasComponentCircle width={600} height={400} />
+    </CanvasLayout>
+    <CanvasLayout>
+      <Canvas width={600} height={400} />
     </CanvasLayout>
     </Fragment>
   );

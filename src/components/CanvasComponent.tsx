@@ -34,6 +34,11 @@ export const CanvasComponent: React.FC<CanvasComponentProps> = ({ width, height 
         drawRectangles(rectangles);
     }, [rectangles]);
 
+    useEffect(() => {
+        if (!tempRect) return;
+        drawRectangles([...rectangles, tempRect]);
+      }, [tempRect, rectangles]);
+
     const drawRectangles = (rects: Rectangle[]) => {
         const canvas = canvasRef.current;
         if (!canvas) return;

@@ -32,7 +32,12 @@ export const CanvasComponentCircle: React.FC<CanvasComponentCircleProps> = ({ wi
     // Add this useEffect to redraw circles when they change
     useEffect(() => {
         drawCircles(circles);
-    }, [circles]);
+    });
+
+    useEffect(() => {
+        if (!tempCircles) return;
+        drawCircles([...circles, tempCircles]);
+    });
 
     const drawCircles = (circles: Circles[]) => {
         const canvas = canvasRef.current;
