@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
+import { CanvasLayout } from './components/layouts/CanvasLayout';
+import { CanvasComponent } from './components/CanvasComponent';
+import { CanvasComponentCircle } from './components/CanvasComponentCircle';
+import { Canvas } from './components/Image';
 
 const App: React.FC = () =>  {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+    <CanvasLayout>
+    <CanvasComponent width={600} height={400} />
+    </CanvasLayout>
+    <CanvasLayout>
+    <CanvasComponentCircle width={600} height={400} />
+    </CanvasLayout>
+    <CanvasLayout>
+      <Canvas width={600} height={400} />
+    </CanvasLayout>
+    </Fragment>
   );
 }
 
